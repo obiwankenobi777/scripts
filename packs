@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -n "pacman -Q     ->   " && echo $(pacman -Q | wc -l)
+echo -n "pacman -Qtd   ->   " && echo $(pacman -Qtd | wc -l)
+echo -n "pacman -Qm    ->   " && echo $(pacman -Qm | wc -l)
