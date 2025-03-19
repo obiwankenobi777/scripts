@@ -5,11 +5,11 @@ if [ "$#" -eq 0 ]; then
     exit 1
 fi
 
-if [ -L $HOME/.local/bin/main ]; then
-    rm $HOME/.local/bin/main
+if [ -L $HOME/.local/bin/foo ]; then
+    rm $HOME/.local/bin/foo
 fi
 
 touch $1
 chmod +x $1
-ln -s $PWD/$1 $HOME/.local/bin/main
+ln -s $PWD/$1 $HOME/.local/bin/foo
 vim $1
