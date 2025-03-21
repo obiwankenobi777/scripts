@@ -6,7 +6,8 @@
 [[ $- != *i* ]] && return
 
 #PS1='[\u@\h \W]\$ ' 
-PS1=' \W \$ '
+#PS1=' \W \$ '
+PS1=' \W > '
 
 #btw... i use arch
 #if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
