@@ -6,17 +6,18 @@
 [[ $- != *i* ]] && return
 
 #PS1='[\u@\h \W]\$ ' 
-#PS1=' \W \$ '
-PS1=' \W > '
+#PS1=' \W > '
+PS1=' \W \$ '
 
 #btw... i use arch
 #if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 #    startx
 #fi
 
-export XDG_CURRENT_DESKTOP=sway
+#export XDG_CURRENT_DESKTOP=sway
 export PATH=/home/ian/.local/bin:$PATH
 
+alias audio="pulseaudio -k && pulseaudio --start"
 alias venv="cd venv && source ./bin/activate"
 alias index="vim index.html"
 alias readme="vim readme || vim README"
