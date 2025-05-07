@@ -14,4 +14,4 @@ fi
 touch $1
 chmod +x $1
 ln -s $PWD/$1 $HOME/.local/bin/foo
-vim $1
+nvim $1
