@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+setxkpmap -layout us -variant intl
