@@ -6,7 +6,6 @@
 [[ $- != *i* ]] && return
 
 #PS1='[\u@\h \W]\$ ' 
-#PS1=' \W > '
 PS1=' \W \$ '
 
 #btw... i use arch
@@ -18,18 +17,17 @@ PS1=' \W \$ '
 export PATH=/home/ian/.local/bin:$PATH
 
 alias audio="pulseaudio -k && pulseaudio --start"
-alias index="vim index.html"
-alias readme="vim readme || vim README"
+alias readme="nvim readme || nvim README"
 alias cl="cd ~/downloads; rm -v *jpg *jpeg *png *webp *avif *jpg!d; ls"
 alias fet="clear; neofetch"
 alias code="cd ~/.code/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
 alias scripts="cd ~/.config/scripts/"
-alias wmrc="vim ~/.config/sway/config"
-alias termrc="vim ~/.config/foot/foot.ini"
-alias vimrc="vim ~/.vimrc"
-alias bashrc="vim ~/.bashrc"
+alias wmrc="nvim ~/.config/sway/config"
+alias termrc="nvim ~/.config/foot/foot.ini"
+alias vimrc="nvim ~/.nvimrc"
+alias bashrc="nvim ~/.bashrc"
 alias proc="ps aux | wc -l"
 alias bright="brightnessctl"
 alias disco="df -h | grep sda; echo -e; lsblk"
@@ -41,7 +39,7 @@ alias remove="sudo pacman -Rsnc"
 alias hd="hexdump -C"
 alias ~="cd ~"
 alias ..="cd .."
-alias v="vim"
+alias v="nvim"
 alias py="python3"
 alias ipy="ipython"
 alias sql="sqlite3"
