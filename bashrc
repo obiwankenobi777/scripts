@@ -13,9 +13,9 @@ PS1=' \W \$ '
 #    startx
 #fi
 
-#export XDG_CURRENT_DESKTOP=sway
 export PATH=/home/ian/.local/bin:$PATH
 
+alias cls="clear"
 alias audio="pulseaudio -k && pulseaudio --start"
 alias readme="nvim readme || nvim README"
 alias cl="cd ~/downloads; rm -v *jpg *jpeg *png *webp *avif *jpg!d; ls"
@@ -40,8 +40,6 @@ alias hd="hexdump -C"
 alias ~="cd ~"
 alias ..="cd .."
 alias v="nvim"
-alias py="python3"
-alias ipy="ipython"
 alias sql="sqlite3"
 alias ls='ls --color=auto'
 alias l="ls -F"
