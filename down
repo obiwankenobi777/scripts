@@ -1,13 +1,13 @@
 #!/usr/bin/bash
 
-if [ "$#" -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
     echo "Argumentos Ausentes!"
     exit 1
 fi
 
 unzip $1.zip -d $1
 
-if [ ! -d ./wallpaper/$1 ]; then
+if [[ ! -d ./wallpaper/$1 ]]; then
     echo "./wallaper/$1 doesn't exist!"
     echo "Let's go creat it!"
     mv -vf ./$1 ./wallpaper/$1
@@ -16,6 +16,6 @@ else
     mv ./$1 ./wallpaper/$1
 fi
 
-rm $1.zip
+rm -v $1.zip
 
-rm *jpg *png *webp *jpeg
+rm -v *jpg *png *webp *jpeg

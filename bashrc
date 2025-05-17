@@ -6,7 +6,10 @@
 [[ $- != *i* ]] && return
 
 #PS1='[\u@\h \W]\$ ' 
-PS1=' \W \$ '
+#PS1=' \W \$ '
+#PS1='\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[0m\]\$ '
+PS1='\[\e[34m\]\w\[\e[0m\] \$ '
+
 
 #btw... i use arch
 #if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
@@ -15,6 +18,7 @@ PS1=' \W \$ '
 
 export PATH=/home/ian/.local/bin:$PATH
 
+alias so="source ~/.bashrc"
 alias cls="clear"
 alias audio="pulseaudio -k && pulseaudio --start"
 alias readme="nvim readme || nvim README"
@@ -29,7 +33,7 @@ alias termrc="nvim ~/.config/foot/foot.ini"
 alias vimrc="nvim ~/.config/nvim/init.lua"
 alias bashrc="nvim ~/.bashrc"
 alias proc="ps aux | wc -l"
-alias bright="brightnessctl"
+alias b="brightnessctl"
 alias disco="df -h | grep sda; echo -e; lsblk"
 alias path="echo $PATH | tr ':' '\n'"
 alias day="cal --week && date && uptime -p"
@@ -40,6 +44,7 @@ alias hd="hexdump -C"
 alias ~="cd ~"
 alias ..="cd .."
 alias v="nvim"
+alias n="nvim"
 alias sql="sqlite3"
 alias ls='ls --color=auto'
 alias l="ls -F"
