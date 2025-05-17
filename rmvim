@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 dir="$HOME/.cache/vim/swap/"
 value=$(ls $dir | wc -l)
