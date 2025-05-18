@@ -7,8 +7,8 @@
 
 #PS1='[\u@\h \W]\$ ' 
 #PS1=' \W \$ '
-#PS1='\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[0m\]\$ '
-PS1='\[\e[34m\]\w/\[\e[0m\] \$ '
+#PS1='\[\e[34m\]\w/\[\e[0m\] \$ '
+PS1='\[\e[34m\]\w/ $\[\e[0m\] '
 
 
 #btw... i use arch
@@ -24,6 +24,7 @@ alias audio="pulseaudio -k && pulseaudio --start"
 alias readme="nvim readme || nvim README"
 alias cl="cd ~/downloads; rm -v *jpg *jpeg *png *webp *avif *jpg!d; ls"
 alias fet="clear; neofetch"
+alias work="cd ~/work/"
 alias code="cd ~/code/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
