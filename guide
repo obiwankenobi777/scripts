@@ -10,7 +10,7 @@ dir="$HOME/code/$1/readme"
 if [[ -e $dir ]]; then
     less "$dir"
 
-elif [[ $1 = "db ]] || [[ $1 = "sql ]]; then
+elif [[ $1 = "db" ]] || [[ $1 = "sql" ]]; then
     less "$HOME/code/db/readme"
 
 elif [[ $1 = "sh" ]] || [[ $1 = "bash" ]]; then
