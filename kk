@@ -16,7 +16,7 @@ if [[ $# -gt 1 ]]; then
         fi
 
         if [[ -f $1.cpp ]]; then
-            g++ -std=c++17 -o "$1" "$1.cpp" && ./"$1"
+            g++ -std=c++20 -o "$1" "$1.cpp" && ./"$1"
             exit
         fi
 fi
