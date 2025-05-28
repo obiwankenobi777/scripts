@@ -14,4 +14,11 @@ fi
 touch $1
 chmod +x $1
 ln -s $PWD/$1 $HOME/.local/bin/foo
-nvim $1
+
+read -p "Deseja abrir o arquivo? sim ou não(s ou n)? " v
+case $v in
+    's' | 'S')
+        nvim $1;;
+    'n' | 'N')
+        ;;
+esac
