@@ -6,12 +6,13 @@ if [[ $# -eq 0 ]]; then
 fi
 
 if [[ $# -gt 1 ]]; then
-    gcc -Wall -std=c17 -o "$1" "$1".c "$2".c && ./"$1"
+    gcc -Wall -std=c23 -o "$1" "$1".c "$2".c && ./"$1"
     exit
 
 elif [[ -f $1.c ]]; then
-        gcc -Wall -std=c17 -o "$1" "$1.c" && ./"$1"
+        gcc -Wall -std=c23 -o "$1" "$1.c" && ./"$1"
         exit 
+
 elif [[ -f $1.cpp ]]; then
         g++ -Wall -std=c++23 -o "$1" "$1.cpp" && ./"$1"
         exit
