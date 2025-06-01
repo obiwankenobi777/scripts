@@ -18,7 +18,11 @@ ln -s $PWD/$1 $HOME/.local/bin/foo
 read -p "Deseja abrir o arquivo? sim ou não(s ou n)? " v
 case $v in
     's' | 'S')
-        nvim $1;;
+        nvim $1
+        ;;
     'n' | 'N')
+        ;;
+    *)
+        echo "Entrada invalida"
         ;;
 esac

@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+#  Este programa envia um arquivo contido em libsh para ~/.config/scripts/ e 
+#  ~/.local/bin/. Onde o arquivo a ser enviado e dado como parametro na linha
+#  de comando
+
+
+if [[ $# -lt 1 ]]; then
+    echo "Missing parameter"
+    exit 1
+elif [[ $# -eq 1 ]]; then
+    echo "sending file >> $i"
+    cp -v ./"$1" $HOME/.config/scripts/"$1"
+    cp -v ./"$1" $(echo $PATH | tr ':' '\n' | head -n 1)/"$1"
+
+elif [[ $# -gt 1 ]]; then
+    for i in "$@"; do
+        echo "sending file >> $i"
+        cp -v ./"$i" $HOME/.config/scripts/"$i"
+        cp -v ./"$i" $(echo $PATH | tr ':' '\n' | head -n 1)/"$i"
+        printf '\n'
+    done
+fi
