@@ -5,7 +5,7 @@ if [[ $# -lt 1 ]] || [[ $# -eq 0 ]]; then
     exit 1
 
 elif [[ -f $1.c ]]; then
-    gcc -Wall -Wextra -Wpedantic -O2 -std=c23 -o "$1" "$1".c
+    gcc -Wall -Wextra -Wpedantic -O2 -std=gnu23 -o "$1" "$1".c
     exit
 
 elif [[ -f $1.cpp ]]; then

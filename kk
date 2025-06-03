@@ -6,11 +6,11 @@ if [[ $# -eq 0 ]]; then
 fi
 
 if [[ $# -gt 1 ]]; then
-    gcc -Wall -Wextra -Wpedantic -O2 -std=c23 -o "$1" "$1".c "$2".c && ./"$1"
+    gcc -Wall -Wextra -Wpedantic -O2 -std=gnu23 -o "$1" "$1".c "$2".c && ./"$1"
     exit
 
 elif [[ -f $1.c ]]; then
-        gcc -Wall -Wextra -Wpedantic -O2 -std=c23 -o "$1" "$1.c" && ./"$1"
+        gcc -Wall -Wextra -Wpedantic -O2 -std=gnu23 -o "$1" "$1.c" && ./"$1"
         exit 
 
 elif [[ -f $1.cpp ]]; then
