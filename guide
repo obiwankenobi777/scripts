@@ -16,7 +16,11 @@ elif [[ $1 = "db" ]] || [[ $1 = "sql" ]]; then
 elif [[ $1 = "sh" ]] || [[ $1 = "bash" ]]; then
     less "$HOME/code/guides/sh"
 
+elif [[ $1 = "rs" ]] || [[ $1 = "rust" ]]; then
+    less "$HOME/code/guides/rs"
+
 else 
     echo "Doesn't exists MAN of $1"
     exit 1 
+
 fi
