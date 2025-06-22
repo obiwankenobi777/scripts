@@ -12,14 +12,14 @@ elif [[ $# -eq 1 ]]; then
     echo "Sending $# files!"
     echo "Sending file >> $1"
     cp -v ./"$1" $HOME/.config/scripts/"$1"
-    cp -v ./"$1" $(echo $PATH | tr ':' '\n' | head -n 1)/"$1"
+    cp -v ./"$1" $HOME/.local/bin/"$1"
 
 elif [[ $# -gt 1 ]]; then
     echo "Sending $# files!"
     for i in "$@"; do
         echo "Sending file >> $i"
         cp -v ./"$i" $HOME/.config/scripts/"$i"
-        cp -v ./"$i" $(echo $PATH | tr ':' '\n' | head -n 1)/"$i"
+        cp -v ./"$i" $HOME/.local/bin/"$i"
         printf '\n'
     done
 fi
