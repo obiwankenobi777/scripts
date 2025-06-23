@@ -14,15 +14,13 @@ PS1='\[\e[34m\]\w/ $\[\e[0m\] '
 
 export PATH=/home/ian/.local/bin:$PATH
 
+alias bar="(cd ~/code/db && sqlite3 < foo.sql | less)"
 alias fet="clear; fastfetch"
-alias so="source ~/.bashrc"
 alias cls="clear"
 alias audio="pulseaudio -k && pulseaudio --start"
-alias readme="nvim readme || nvim README"
-alias cl="cd ~/downloads; rm -v *jpg *jpeg *png *webp *avif *jpg!d *mp4; ls"
+alias cl="cd ~/downloads; rm -v *jpg *jpeg *png *webp *avif *jpg!d *mp4 *svg; ls"
 alias scripts="cd ~/.config/scripts/"
 alias guides="cd ~/code/guides/"
-alias code="cd ~/code/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
 alias wmrc="nvim ~/.config/sway/config"
@@ -44,6 +42,7 @@ alias v="nvim"
 alias n="nvim"
 alias sql="sqlite3"
 alias py="python"
+alias ipy="ipython"
 alias ls='ls --color=auto'
 alias l="ls -F"
 alias ll="ls -lia"
