@@ -6,7 +6,7 @@
 
 #PS1='[\u@\h \W]\$ ' 
 #PS1=' \W \$ '
-PS1='\[\e[34m\]\w/ $\[\e[0m\] '
+PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 
 # If running from tty1 start sway
 #[[ -z $DISPLAY && $(tty) = /dev/tty1 ]] && exec sway
@@ -24,6 +24,7 @@ alias scripts="cd ~/.config/scripts/"
 alias guides="cd ~/code/guides/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
+alias vimrc="nvim ~/.config/nvim/init.lua"
 alias hxrc="helix ~/.config/helix/config.toml"
 alias wmrc="helix ~/.config/sway/config"
 alias termrc="helix ~/.config/foot/foot.ini"
@@ -39,7 +40,10 @@ alias remove="sudo pacman -Rsnc"
 alias hd="hexdump -C | less"
 alias ~="cd ~"
 alias ..="cd .."
-alias hx="helix"
+alias v="nvim"
+alias n="nvim"
+alias f="helix"
+alias j="helix"
 alias sql="sqlite3"
 alias py="python"
 alias ipy="ipython"
