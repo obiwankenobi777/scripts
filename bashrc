@@ -13,15 +13,15 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 
 . "$HOME/.cargo/env"
 export PATH=/home/ian/.local/bin:$PATH
+export EDITOR=helix
 
-alias readme="helix readme"
 alias hours="(cd ~/code/db && sqlite3 < foo.sql | less)"
-alias venv="cd ~/code/spy/venv/ && source ./bin/activate"
 alias fet="clear; fastfetch"
 alias cls="clear"
 alias audio="pulseaudio -k && pulseaudio --start"
-alias cl="cd ~/downloads; rm -v *jpg *jpeg *png *webp *avif *jpg!d *mp4 *svg; ls"
+alias venv="cd ~/code/spy/venv/ && source ./bin/activate"
 alias spy="cd ~/code/spy/"
+alias web="cd ~/code/web/"
 alias rs="cd ~/code/rs/"
 alias config="cd ~/.config/"
 alias scripts="cd ~/.config/scripts/"
@@ -42,7 +42,7 @@ alias remove="sudo pacman -Rsnc"
 alias hd="hexdump -C | less"
 alias ~="cd ~"
 alias ..="cd .."
-alias hx="helix"
+alias yz="yazi"
 alias f="helix"
 alias j="helix"
 alias sql="sqlite3"
@@ -56,3 +56,7 @@ alias grep='grep --color=auto'
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
