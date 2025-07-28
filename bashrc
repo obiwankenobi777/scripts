@@ -5,7 +5,6 @@
 [[ $- != *i* ]] && return
 
 #PS1='[\u@\h \W]\$ ' 
-#PS1=' \W \$ '
 PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 
 # If running from tty1 start sway
@@ -15,13 +14,14 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=helix
 
-alias hours="(cd ~/code/db && sqlite3 < foo.sql | less)"
 alias fet="clear; fastfetch"
 alias cls="clear"
 alias audio="pulseaudio -k && pulseaudio --start"
 alias venv="cd ~/code/spy/venv/ && source ./bin/activate"
 alias spy="cd ~/code/spy/"
+alias vanilla="cd ~/code/web/vanilla/"
 alias web="cd ~/code/web/"
+alias src="cd ~/code/rs/src/"
 alias rs="cd ~/code/rs/"
 alias config="cd ~/.config/"
 alias scripts="cd ~/.config/scripts/"
@@ -57,6 +57,4 @@ alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "/home/ian/.deno/env"
