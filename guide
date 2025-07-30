@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-if [[ $# -lt 1 ]]; then
-    echo "Missing parameter"
+if [[ $# -eq 0 ]]; then
+    ls $HOME/code/guides/
     exit 1
 fi
 
