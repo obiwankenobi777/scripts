@@ -14,15 +14,8 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=helix
 
-alias fet="clear; fastfetch"
 alias cls="clear"
 alias audio="pulseaudio -k && pulseaudio --start"
-alias venv="cd ~/code/spy/venv/ && source ./bin/activate"
-alias spy="cd ~/code/spy/"
-alias vanilla="cd ~/code/web/vanilla/"
-alias web="cd ~/code/web/"
-alias src="cd ~/code/rs/src/"
-alias rs="cd ~/code/rs/"
 alias config="cd ~/.config/"
 alias scripts="cd ~/.config/scripts/"
 alias books="cd ~/books/"
