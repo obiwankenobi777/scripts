@@ -14,6 +14,7 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=helix
 
+alias fet="clear && fastfetch"
 alias cls="clear"
 alias audio="pulseaudio -k && pulseaudio --start"
 alias config="cd ~/.config/"
@@ -49,5 +50,3 @@ alias grep='grep --color=auto'
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
-
-. "/home/ian/.deno/env"
