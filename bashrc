@@ -41,7 +41,6 @@ alias f="helix"
 alias j="helix"
 alias sql="sqlite3"
 alias py="python"
-alias ipy="ipython"
 alias ls='ls --color=auto'
 alias l="ls -F"
 alias ll="ls -lia"
