@@ -10,10 +10,14 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 # If running from tty1 start sway
 #[[ -z $DISPLAY && $(tty) = /dev/tty1 ]] && exec sway
 
+#EXPORTS
 . "$HOME/.cargo/env"
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=helix
+. "/home/ian/.deno/env"
 
+#ALIAS
+alias guides="cd ~/.code/guides/"
 alias fet="clear && fastfetch"
 alias cls="clear"
 alias audio="pulseaudio -k && pulseaudio --start"
@@ -31,7 +35,7 @@ alias disco="df -h | grep sda; echo -e; lsblk"
 alias path="echo $PATH | tr ':' '\n'"
 alias today="cal --week && date && uptime -p && days"
 alias install="sudo pacman -S"
-alias update="sudo pacman -Syu && yay" 
+alias update="sudo pacman -Syu && yay && rustup update && deno upgrade" 
 alias remove="sudo pacman -Rsnc"
 alias hd="hexdump -C | less"
 alias ~="cd ~"
@@ -49,3 +53,16 @@ alias grep='grep --color=auto'
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
+ 
+#FUNCTIONS
+readme() {
+  if [ -f "readme" ]; then
+    helix readme
+  elif [ -f "README" ]; then
+    helix README
+  else
+    echo "Nenhum arquivo 'readme' ou 'README' encontrado, criando 'README'..."
+    helix README
+  fi
+}
+
