@@ -53,16 +53,3 @@ alias grep='grep --color=auto'
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
- 
-#FUNCTIONS
-readme() {
-  if [ -f "readme" ]; then
-    helix readme
-  elif [ -f "README" ]; then
-    helix README
-  else
-    echo "Nenhum arquivo 'readme' ou 'README' encontrado, criando 'README'..."
-    helix README
-  fi
-}
-
