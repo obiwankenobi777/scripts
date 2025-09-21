@@ -11,10 +11,10 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 #[[ -z $DISPLAY && $(tty) = /dev/tty1 ]] && exec sway
 
 #EXPORTS
+. "$HOME/.deno/env"
 . "$HOME/.cargo/env"
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=helix
-. "/home/ian/.deno/env"
 
 #ALIAS
 alias guides="cd ~/.code/guides/"
