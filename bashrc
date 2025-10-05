@@ -11,12 +11,14 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 #[[ -z $DISPLAY && $(tty) = /dev/tty1 ]] && exec sway
 
 #EXPORTS
-. "$HOME/.deno/env"
-. "$HOME/.cargo/env"
+# . "$HOME/.deno/env"
+# . "$HOME/.cargo/env"
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=helix
 
 #ALIAS
+# brightnessctl
+alias b="brightnessctl"
 alias guides="cd ~/.code/guides/"
 alias fet="clear && fastfetch"
 alias cls="clear"
@@ -30,12 +32,11 @@ alias wmrc="helix ~/.config/sway/config"
 alias termrc="helix ~/.config/foot/foot.ini"
 alias bashrc="helix ~/.bashrc"
 alias proc="ps aux | wc -l"
-alias b="brightnessctl"
 alias disco="df -h | grep sda; echo -e; lsblk"
 alias path="echo $PATH | tr ':' '\n'"
 alias today="cal --week && date && uptime -p && days"
 alias install="sudo pacman -S"
-alias update="sudo pacman -Syu && yay && rustup update && deno upgrade" 
+alias update="sudo pacman -Syu && yay" 
 alias remove="sudo pacman -Rsnc"
 alias hd="hexdump -C | less"
 alias ~="cd ~"
@@ -45,6 +46,7 @@ alias f="helix"
 alias j="helix"
 alias sql="sqlite3"
 alias py="python"
+alias ipy="ipython"
 alias ls='ls --color=auto'
 alias l="ls -F"
 alias ll="ls -lia"
