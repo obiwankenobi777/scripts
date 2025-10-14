@@ -1,4 +1,5 @@
 #
+# 
 # ~/.bashrc
 #
 # If not running interactively, don't do anything
@@ -27,6 +28,7 @@ alias config="cd ~/.config/"
 alias scripts="cd ~/.config/scripts/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
+alias plt="gnuplot"
 alias hxrc="helix ~/.config/helix/config.toml"
 alias wmrc="helix ~/.config/sway/config"
 alias termrc="helix ~/.config/foot/foot.ini"
