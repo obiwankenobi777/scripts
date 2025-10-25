@@ -1,4 +1,3 @@
-#
 # 
 # ~/.bashrc
 #
@@ -8,16 +7,11 @@
 #PS1='[\u@\h \W]\$ ' 
 PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 
-# If running from tty1 start sway
-#[[ -z $DISPLAY && $(tty) = /dev/tty1 ]] && exec sway
-
-#EXPORTS
-# . "$HOME/.deno/env"
-# . "$HOME/.cargo/env"
+#exports
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=helix
 
-#ALIAS
+#alias
 # brightnessctl
 alias b="brightnessctl"
 alias guides="cd ~/.code/guides/"
@@ -30,9 +24,9 @@ alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
 alias vimrc="vim ~/.config/vim/vimrc"
 alias hxrc="helix ~/.config/helix/config.toml"
-alias wmrc="helix ~/.config/sway/config"
-alias termrc="helix ~/.config/foot/foot.ini"
-alias bashrc="helix ~/.bashrc"
+alias wmrc="vim ~/.config/sway/config"
+alias termrc="vim ~/.config/foot/foot.ini"
+alias bashrc="vim ~/.bashrc"
 alias proc="ps aux | wc -l"
 alias disco="df -h | grep sda; echo -e; lsblk"
 alias path="echo $PATH | tr ':' '\n'"
