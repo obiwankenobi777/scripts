@@ -13,8 +13,6 @@ export EDITOR=helix
 
 #alias
 # brightnessctl
-mkd() { mkdir -p "$1" && cd "$1"; }
-venv() { python3 -m venv venv; cd venv; source ./bin/activate; pip install python-lsp-server; }
 alias b="brightnessctl"
 alias guides="cd ~/.code/guides/"
 alias fet="clear && fastfetch"
@@ -52,3 +50,17 @@ alias grep='grep --color=auto'
 alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
+
+#FUNCTIONS
+mkd() { mkdir -p "$1" && cd "$1"; }
+venv() {
+  if [[ ! -d "./venv" ]]; then
+    python3 -m venv venv
+    cd venv
+    source ./bin/activate
+    pip install python-lsp-server
+  else
+    cd venv
+    source ./bin/activate
+fi
+}
