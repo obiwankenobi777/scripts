@@ -13,6 +13,8 @@ export EDITOR=helix
 
 #alias
 # brightnessctl
+mkd() { mkdir -p "$1" && cd "$1"; }
+venv() { python3 -m venv venv; cd venv; source ./bin/activate; pip install python-lsp-server; }
 alias b="brightnessctl"
 alias guides="cd ~/.code/guides/"
 alias fet="clear && fastfetch"
@@ -24,8 +26,8 @@ alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
 alias vimrc="vim ~/.config/vim/vimrc"
 alias hxrc="helix ~/.config/helix/config.toml"
-alias wmrc="helix ~/.config/sway/config"
-alias termrc="helix ~/.config/foot/foot.ini"
+alias wmrc="vim ~/.config/sway/config"
+alias termrc="vim ~/.config/foot/foot.ini"
 alias bashrc="helix ~/.bashrc"
 alias proc="ps aux | wc -l"
 alias disk="df -h | grep sda; echo -e; lsblk"
@@ -35,7 +37,6 @@ alias install="sudo pacman -S"
 alias update="sudo pacman -Syu && yay" 
 alias remove="sudo pacman -Rsnc"
 alias hd="hexdump -C | less"
-alias ~="cd ~"
 alias ..="cd .."
 alias yz="yazi"
 alias f="helix"
