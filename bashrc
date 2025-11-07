@@ -58,9 +58,11 @@ venv() {
     python3 -m venv venv
     cd venv
     source ./bin/activate
-    pip install python-lsp-server
+    mkdir spy && cd spy
+    pip install --upgrade pip
+    pip install python-lsp-server pylint "$@"
   else
-    cd venv
-    source ./bin/activate
+    cd venv/spy
+    source ../bin/activate
 fi
 }
