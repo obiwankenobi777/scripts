@@ -23,10 +23,10 @@ alias scripts="cd ~/.config/scripts/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
 alias vimrc="vim ~/.config/vim/vimrc"
-alias hxrc="helix ~/.config/helix/config.toml"
+alias hxrc="vim ~/.config/helix/config.toml"
 alias wmrc="vim ~/.config/sway/config"
 alias termrc="vim ~/.config/foot/foot.ini"
-alias bashrc="helix ~/.bashrc"
+alias bashrc="vim ~/.bashrc"
 alias proc="ps aux | wc -l"
 alias disk="df -h | grep sda; echo -e; lsblk"
 alias path="echo $PATH | tr ':' '\n'"
@@ -53,6 +53,15 @@ alias rm="rm -v"
 
 #FUNCTIONS
 mkd() { mkdir -p "$1" && cd "$1"; }
+trash() {
+    cd ~/.local/share/Trash
+    for i in $(ls); do
+        rm ./$i/*
+    done
+    echo "I'm here in >> $(pwd)"
+    ls ./*
+    cd ~
+}
 venv() {
   if [[ ! -d "./venv" ]]; then
     python3 -m venv venv
@@ -60,7 +69,8 @@ venv() {
     source ./bin/activate
     mkdir spy && cd spy
     pip install --upgrade pip
-    pip install python-lsp-server pylint "$@"
+    pip install python-lsp-server "$@"
+    clear
   else
     cd venv/spy
     source ../bin/activate
