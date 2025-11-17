@@ -9,7 +9,8 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 
 #exports
 export PATH=/home/ian/.local/bin:$PATH
-export EDITOR=helix
+# export EDITOR=helix
+export EDITOR=nvim
 
 #alias
 # brightnessctl
@@ -23,10 +24,11 @@ alias scripts="cd ~/.config/scripts/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
 alias vimrc="vim ~/.config/vim/vimrc"
-alias hxrc="vim ~/.config/helix/config.toml"
-alias wmrc="vim ~/.config/sway/config"
-alias termrc="vim ~/.config/foot/foot.ini"
-alias bashrc="vim ~/.bashrc"
+alias nvimrc="nvim ~/.config/nvim/init.lua"
+alias hxrc="nvim ~/.config/helix/config.toml"
+alias wmrc="nvim ~/.config/sway/config"
+alias termrc="nvim ~/.config/foot/foot.ini"
+alias bashrc="nvim ~/.bashrc"
 alias proc="ps aux | wc -l"
 alias disk="df -h | grep sda; echo -e; lsblk"
 alias path="echo $PATH | tr ':' '\n'"
@@ -39,6 +41,7 @@ alias ..="cd .."
 alias yz="yazi"
 alias f="helix"
 alias v="vim"
+alias n="nvim"
 alias sql="sqlite3"
 alias py="python"
 alias ipy="ipython"
@@ -69,7 +72,7 @@ venv() {
     source ./bin/activate
     mkdir spy && cd spy
     pip install --upgrade pip
-    pip install python-lsp-server "$@"
+    pip install python-lsp-server pyright "$@"
     clear
   else
     cd venv/spy
