@@ -8,9 +8,9 @@
 PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 
 #exports
-export PATH=/home/ian/.local/bin:$PATH
-# export EDITOR=helix
 export EDITOR=nvim
+eval "$(luarocks path)"
+export PATH=/home/ian/.local/bin:$PATH
 
 #alias
 # brightnessctl
@@ -23,9 +23,8 @@ alias config="cd ~/.config/"
 alias scripts="cd ~/.config/scripts/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
-alias vimrc="vim ~/.config/vim/vimrc"
-alias nvimrc="nvim ~/.config/nvim/init.lua"
-alias hxrc="nvim ~/.config/helix/config.toml"
+alias vimrc="nvim ~/.config/nvim/init.lua"
+alias hxrc="helix ~/.config/helix/config.toml"
 alias wmrc="nvim ~/.config/sway/config"
 alias termrc="nvim ~/.config/foot/foot.ini"
 alias bashrc="nvim ~/.bashrc"
@@ -40,7 +39,7 @@ alias hd="hexdump -C | less"
 alias ..="cd .."
 alias yz="yazi"
 alias f="helix"
-alias v="vim"
+alias v="nvim"
 alias n="nvim"
 alias sql="sqlite3"
 alias py="python"
@@ -61,7 +60,7 @@ trash() {
     for i in $(ls); do
         rm ./$i/*
     done
-    echo "I'm here in >> $(pwd)"
+    printf "\nI'm here in >> $(pwd)\n\n"
     ls ./*
     cd ~
 }
@@ -72,7 +71,7 @@ venv() {
     source ./bin/activate
     mkdir spy && cd spy
     pip install --upgrade pip
-    pip install python-lsp-server pyright "$@"
+    pip install python-lsp-server "$@"
     clear
   else
     cd venv/spy
