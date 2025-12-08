@@ -9,7 +9,7 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 ##################################################################
 #EXPORTS
 ##################################################################
-# eval "$(luarocks path)"
+eval "$(luarocks path)"
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=nvim
 
@@ -26,10 +26,10 @@ alias scripts="cd ~/.config/scripts/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
 alias vimrc="vim ~/.config/vim/vimrc"
-alias nvimrc="nvim ~/.config/nvim/init.lua"
-alias wmrc="nvim ~/.config/sway/config"
-alias termrc="nvim ~/.config/foot/foot.ini"
-alias bashrc="nvim ~/.bashrc"
+alias nvimrc="nvim ~/.config/nvim/lua/plugins/core.lua"
+alias wmrc="vim ~/.config/sway/config"
+alias termrc="vim ~/.config/foot/foot.ini"
+alias bashrc="vim ~/.bashrc"
 alias proc="ps aux | wc -l"
 alias disk="df -h | grep sda; echo -e; lsblk"
 alias path="echo $PATH | tr ':' '\n'"
@@ -40,8 +40,10 @@ alias remove="sudo pacman -Rsnc"
 alias hd="hexdump -C | less"
 alias ..="cd .."
 alias yz="yazi"
-alias v="nvim"
-alias n="nvim"
+alias f="nvim"
+alias j="nvim"
+alias v="vim"
+alias n="vim"
 alias sql="sqlite3"
 alias py="python"
 alias ipy="ipython"
@@ -65,7 +67,7 @@ venv() {
         source ./bin/activate
         mkdir spy && cd spy
         pip install --upgrade pip
-        pip install python-lsp-server "$@"
+        # pip install python-lsp-server "$@"
         clear
     else
         cd venv/spy
