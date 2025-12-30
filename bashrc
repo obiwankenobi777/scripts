@@ -3,13 +3,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#PS1='[\u@\h \W]\$ '
+# PS1='[\u@\h \W]\$ '
 PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 
 ##################################################################
 #EXPORTS
 ##################################################################
-eval "$(luarocks path)"
+# eval "$(luarocks path)"
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=nvim
 
@@ -18,7 +18,6 @@ export EDITOR=nvim
 ##################################################################
 # brightnessctl
 alias b="brightnessctl"
-alias guides="cd ~/.code/guides/"
 alias cls="clear"
 alias audio="pulseaudio -k && pulseaudio --start"
 alias config="cd ~/.config/"
@@ -35,7 +34,7 @@ alias disk="df -h | grep sda; echo -e; lsblk"
 alias path="echo $PATH | tr ':' '\n'"
 alias today="cal --week && date && uptime -p && days"
 alias install="sudo pacman -S"
-alias update="sudo pacman -Syu && paru -Syu"
+alias update="sudo pacman -Syu && yay -Syu"
 alias remove="sudo pacman -Rsnc"
 alias hd="hexdump -C | less"
 alias ..="cd .."
@@ -43,10 +42,8 @@ alias yz="yazi"
 alias f="nvim"
 alias j="nvim"
 alias v="vim"
-alias n="vim"
 alias sql="sqlite3"
 alias py="python"
-alias ipy="ipython"
 alias ls='ls --color=auto'
 alias l="ls -F"
 alias ll="ls -lia"
@@ -66,8 +63,7 @@ venv() {
         cd venv
         source ./bin/activate
         mkdir spy && cd spy
-        pip install --upgrade pip
-        # pip install python-lsp-server "$@"
+        pip install --upgrade pip "$@"
         clear
     else
         cd venv/spy
