@@ -5,7 +5,10 @@ if [[ $# -eq 0 ]]; then
     exit 1
 fi
 
-MAN="$HOME/.code/guides/$1"
+# MAN="$HOME/.code/guides/$1"
+path=$(find $HOME -name "guides") 
+cd $path
+MAN="$path/$1"
 
 if [[ -e $MAN ]]; then
     less "$MAN"
