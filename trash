@@ -21,7 +21,7 @@ clean_trash() {
         if [[ ${trash_info[$key]} -eq 0 ]]; then
             continue
         fi
-        rm ./$key/*
+        rm -rf ./$key/*
         trash_info[$key]=0
         sum_files=0
     done
