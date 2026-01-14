@@ -11,7 +11,7 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 ##################################################################
 # eval "$(luarocks path)"
 export PATH=/home/ian/.local/bin:$PATH
-export EDITOR=nvim
+export EDITOR=vim
 
 ##################################################################
 #ALIAS
@@ -40,7 +40,6 @@ alias hd="hexdump -C | less"
 alias ..="cd .."
 alias yz="yazi"
 alias f="nvim"
-alias j="nvim"
 alias v="vim"
 alias sql="sqlite3"
 alias py="python"
