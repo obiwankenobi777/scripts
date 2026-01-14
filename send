@@ -1,21 +1,21 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-#  Este programa envia um arquivo contido em libsh para ~/.config/scripts/ e 
-#  ~/.local/bin/. Onde o arquivo a ser enviado e dado como parametro na linha
-#  de comando
+#  Este programa envia um arquivo para ~/.config/scripts/ e 
+#  ~/.local/bin/. Onde o arquivo a ser enviado e dado como parametro
+#  na linha de comando
 
-if [[ $# -lt 1 ]]; then
+if [[ "$#" -lt 1 ]]; then
     echo "Missing parameter"
     exit 1
 
-elif [[ $# -eq 1 ]]; then
-    echo "Sending $# files!"
+elif [[ "$#" -eq 1 ]]; then
+    echo "Sending "$#" files!"
     echo "Sending file >> $1"
     cp -v ./"$1" $HOME/.config/scripts/"$1"
     cp -v ./"$1" $HOME/.local/bin/"$1"
 
-elif [[ $# -gt 1 ]]; then
-    echo "Sending $# files!"
+elif [[ "$#" -gt 1 ]]; then
+    echo "Sending "$#" files!"
     for i in "$@"; do
         echo "Sending file >> $i"
         cp -v ./"$i" $HOME/.config/scripts/"$i"
