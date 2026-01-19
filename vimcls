@@ -1,5 +1,69 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-rm -v ~/.cache/vim/swap/*
-rm -v ~/.local/state/nvim/swap/*
-rm -v ~/.local/state/nvim/undo/*
+ONE="$HOME/.cache/vim/swap/"
+TWO="$HOME/.local/state/nvim/swap/"
+THREE="$HOME/.local/state/nvim/undo/"
+KEY=0
+
+menu() {
+    printf "\nWhat do you wish Mr. $USER?!\n"
+    echo "r -> To remove"
+    echo "n -> Does not remove"
+    printf "\nChoise an option: "
+}
+
+countFiles() {
+    local arr=($ONE $TWO $THREE)
+    local count=$(ls -1 | wc -l)
+
+    for i in ${arr[@]}; do 
+        cd $i
+        local count=$(ls -1 | wc -l)
+        if (( $count == 0 )); then
+            echo -n "There isn't files to remove in: "
+            echo $PWD 
+        else
+            echo -n "There is '$count' to remove in: "
+            echo $PWD 
+            ((KEY++))
+        fi
+    done
+}
+choise() {
+    menu
+    read -r todo
+    case "$todo" in
+        r)
+            echo "Remove Files"
+            local arr=($ONE $TWO $THREE)
+            for i in ${arr[@]}; do
+                rm $i*
+            done 
+            exit 0
+            ;;
+        n)
+            echo "Nothing will be removed"
+            echo "Leave me alone"
+            exit 0
+            ;;
+        *)
+            echo "Invalid input"
+            exit 1
+            ;;
+    esac
+}
+
+main() {
+    countFiles
+    # echo $KEY
+
+    if (( $KEY != 0 )); then
+        choise
+    else
+        echo "There's nothing to be done!"
+        exit 0
+    fi
+}
+
+main
+
