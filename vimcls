@@ -7,8 +7,10 @@ KEY=0
 
 menu() {
     printf "\nWhat do you wish Mr. $USER?!\n"
+
     echo "r -> To remove"
     echo "n -> Does not remove"
+
     printf "\nChoise an option: "
 }
 
@@ -29,8 +31,10 @@ countFiles() {
         fi
     done
 }
+
 choise() {
     menu
+
     read -r todo
     case "$todo" in
         r)
@@ -55,7 +59,6 @@ choise() {
 
 main() {
     countFiles
-    # echo $KEY
 
     if (( $KEY != 0 )); then
         choise

@@ -2,57 +2,53 @@
 
 set -euo pipefail
 
+pathDB="$HOME/projects/db/"
+
 menu() {
     echo "What do you wish Mr. $USER!?"
     echo "s -> Show The DataBase."
-    echo "i -> Insert data on the DataBase."
+    echo "i -> Insert data on The DataBase."
     echo "u -> Update to DataBase."
-    echo "d -> Delete some data from the DataBase"
+    echo "d -> Delete some data from The DataBase"
     echo "q -> Exit"
-
-    echo -n "Choise an option: "
+    echo -n "Choice an option: "
 }
 
-main() {
-    local pathDB="$HOME/projects/db"
-    
-    menu
+choice() {
+    local todo="$1"
 
-    read -r todo
     case "$todo" in
-        s)
+        s | show)
             echo "Show DataBase"
             (
-                cd $pathDB || exit 1
+                cd "$pathDB" || exit 1
                 sqlite3 < show.sql
             )
             ;;
-        i)
+        i | insert)
             echo "Insert data"
             (
-                cd $pathDB || exit 1
-                vim insert.sql +4
+                cd "$pathDB" || exit 1
                 sqlite3 < insert.sql
             )
             ;;
-        u)
+        u | update)
             echo "Update data"
             (
-                cd $pathDB || exit 1
+                cd "$pathDB" || exit 1
                 vim update.sql +4
                 sqlite3 < update.sql
             )
             ;;
 
-        d)
+        d | delete)
             echo "Delete something"
             (
-                cd $pathDB || exit 1
-                vim delete.sql +3
+                cd "$pathDB" || exit 1
                 sqlite3 < delete.sql
             )
             ;;
-        q)
+        q | quit)
             echo "Leave me alone"
             exit 0
             ;;
@@ -63,5 +59,14 @@ main() {
     esac
 }
 
-main
+main() {
+    if [[ "$#" -ne 0 ]]; then
+        choice "$1"
+    else
+        menu
+        read -r todo
+        choice "$todo"
+    fi
+}
 
+main "$@"
