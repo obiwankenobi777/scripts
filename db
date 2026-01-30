@@ -26,19 +26,21 @@ choice() {
             )
             ;;
         i | insert)
-            echo "Insert data"
+            echo "Insert Data"
             (
                 cd "$pathDB" || exit 1
                 sqlite3 < insert.sql
             )
+            echo "Data Inserted"
             ;;
         u | update)
-            echo "Update data"
+            echo "Update Data"
             (
                 cd "$pathDB" || exit 1
                 vim update.sql +4
                 sqlite3 < update.sql
             )
+            echo "Data Updated"
             ;;
 
         d | delete)
