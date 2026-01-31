@@ -9,9 +9,9 @@ elif [[ -d ../books/"$1" ]]; then
     mv -v *pdf ../books/"$1"/
 
 else
-    mkdir -p "$1"
-    mv -v *pdf ../"$1"
-    mv -v ./"$1" ../books/"$1"
+    mkdir -p ../books/"$1"/
+    mv -v *pdf ../books/"$1"/
+    mv -v ./"$1" ../books/"$1"/
 fi
 
 exit 0
