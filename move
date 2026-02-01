@@ -21,10 +21,10 @@ movePDFs() {
 
     if [[ -d ../books/"$1" ]]; then
         echo "The directory '$1' already exists"
-        mv -v *pdf ../books/"$1"/
+        mv -v *.pdf ../books/"$1"/
     else
         mkdir -p ../books/"$1"/
-        mv -v *pdf ../books/"$1"/
+        mv -v *.pdf ../books/"$1"/
     fi
 
     shopt -u nullglob
