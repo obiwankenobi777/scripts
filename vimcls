@@ -3,6 +3,7 @@
 ONE="$HOME/.cache/vim/swap/"
 TWO="$HOME/.local/state/nvim/swap/"
 THREE="$HOME/.local/state/nvim/undo/"
+FOUR="$HOME/.local/state/nvim/sessions/"
 declare -a arr
 totalFiles=0
 
@@ -15,7 +16,7 @@ menu() {
 }
 
 countFiles() {
-    local paths=("$ONE" "$TWO" "$THREE")
+    local paths=("$ONE" "$TWO" "$THREE" "$FOUR")
 
     for i in "${paths[@]}"; do
         cd "$i"

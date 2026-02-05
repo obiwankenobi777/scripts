@@ -2,40 +2,44 @@
 
 set -euo pipefail 
 
-if [[ "$#" -lt 1 ]]; then
-    echo "Missing Parameters"
+if [[ "$#" -ne 1 ]]; then
+    printf "Missing Parameters. 1 parameter is required.\n" >&2
     exit 1
 fi
 
 checkDirectory() {
-    echo "Now, I'm Here -> $PWD"
-
     if [[ "$(pwd -P)" != "$HOME/downloads" ]]; then
-        echo "You are in the wrong place"
+        echo "Now, I'm Here -> $PWD"
+        echo "You are in the wrong place" >&2
+        return 1
+    fi
+}
+
+getPDFs() {
+    shopt -s nullglob
+
+    local files=( *.pdf )
+    local count="${#files[@]}"
+
+    shopt -u nullglob
+
+    if [[ "$count" -eq 0 ]]; then
+        echo "There isn't PDFs files here."
         return 1
     fi
 }
 
 movePDFs() {
-    shopt -s nullglob
-
-    local files=( *.pdf )
-    local countFiles="${#files[@]}"
+    getPDFs
 
     if [[ -d ../books/"$1" ]]; then
         echo "The directory '$1' already exists"
-        mv -v *.pdf ../books/"$1"/
-
-    elif [[ "$countFiles" -gt 0 ]]; then
+        mv -v *.pdf ../books/"$1"
+    else
         mkdir -p ../books/"$1"/
-        mv -v *.pdf ../books/"$1"/
-
-    else 
-        echo "There isn't PDFs files!"
-
+        mv -v *.pdf ../books/"$1"
     fi
-
-    shopt -u nullglob
+    return 0
 }
 
 main() {
