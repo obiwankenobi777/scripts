@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [[ "$#" -eq 0 ]]; then
+    echo "Missing Arguments"
+    exit 1
+fi
+
+if [[ -e "$1".s ]] || [[ -e "$1".asm ]]; then
+    nasm -felf64 foo.s -o foo.o
+    ld "$1".o -o "$1"
+    rm *.o
+else 
+    printf "The file '%s' doesn't exists\n" "$1"
+    exit 1
+fi
+
+printf "Running -> %s\n" "$1"
+./"$1"
+exit 0
+
