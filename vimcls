@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 ONE="$HOME/.cache/vim/swap/"
-TWO="$HOME/.local/state/nvim/swap/"
-THREE="$HOME/.local/state/nvim/undo/"
-FOUR="$HOME/.local/state/nvim/sessions/"
+# TWO="$HOME/.local/state/nvim/swap/"
+# THREE="$HOME/.local/state/nvim/undo/"
+# FOUR="$HOME/.local/state/nvim/sessions/"
 declare -a arr
 totalFiles=0
 
