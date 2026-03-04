@@ -6,7 +6,7 @@ if [[ "$#" -eq 0 ]]; then
 fi
 
 if [[ -e "$1".s ]] || [[ -e "$1".asm ]]; then
-    nasm -felf64 foo.s -o foo.o
+    nasm -felf64 "$1".s -o "$1".o 
     ld "$1".o -o "$1"
     rm *.o
 else 

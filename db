@@ -10,6 +10,7 @@ menu() {
     echo "i -> Insert data on The DataBase."
     echo "u -> Update to DataBase."
     echo "d -> Delete some data from The DataBase"
+    echo "m -> Show me The Data Analysis"
     echo "q -> Exit"
     echo -n "Choice an option: "
 }
@@ -42,12 +43,18 @@ choice() {
             )
             echo "Data Updated"
             ;;
-
         d | delete)
             echo "Delete something"
             (
                 cd "$pathDB" || exit 1
                 sqlite3 < delete.sql
+            )
+            ;;
+        m | math)
+            echo "Show The Data Analysis"
+            (
+                cd "$pathDB" || exit 1
+                sqlite3 < math.sql
             )
             ;;
         q | quit)
