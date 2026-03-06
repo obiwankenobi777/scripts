@@ -6,11 +6,11 @@ pathDB="$HOME/projects/db/"
 
 menu() {
     echo "What do you wish Mr. $USER!?"
-    echo "s -> Show The DataBase."
-    echo "i -> Insert data on The DataBase."
+    echo "w -> Show Me The Week(s)."
+    echo "i -> Insert Data on The DataBase."
     echo "u -> Update to DataBase."
     echo "d -> Delete some data from The DataBase"
-    echo "m -> Show me The Data Analysis"
+    echo "m -> Show Me The Data Analysis"
     echo "q -> Exit"
     echo -n "Choice an option: "
 }
@@ -19,8 +19,8 @@ choice() {
     local todo="$1"
 
     case "$todo" in
-        s | show)
-            echo "Show DataBase"
+        w | week)
+            echo "Show Me The Week(s)"
             (
                 cd "$pathDB" || exit 1
                 sqlite3 < show.sql
@@ -58,11 +58,11 @@ choice() {
             )
             ;;
         q | quit)
-            echo "Leave me alone"
+            echo "Quit!"
             exit 0
             ;;
         *)
-            echo "Invalid Input"
+            echo "Invalid Input!"
             exit 1
             ;;
     esac

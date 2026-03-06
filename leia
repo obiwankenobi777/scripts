@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+
+if [[ "$#" -eq 0 ]]; then
+    echo "Missing Parameters"
+    exit 1
+fi
+
+file="$1"
+begin="$2"
+end="$3"
+
+cat $file | head -n $begin | tail -n $end
