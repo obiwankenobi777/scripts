@@ -3,18 +3,18 @@
 FILE="$HOME/.config/sway/config"
 
 if [[ $# -eq 0 ]]; then
-    sed -n '27p' "$FILE"
+    sed -n '26p' "$FILE"
 
 elif [[ $# -eq 1 ]]; then
-    sed -i "27s/[0-9]\{1,2\}/$1/" "$FILE"
-    sed -n '27p' "$FILE"
+    sed -i "26s/[0-9]\{1,2\}/$1/" "$FILE"
+    sed -n '26p' "$FILE"
     
 elif [[ $# -ne 3 ]]; then
     echo "Parâmetros insuficientes"
     exit 1
 
 else
-    sed -i "27s/$1/$2/" "$FILE"
-    sed -i "27s/[0-9]\{1,2\}/$3/" "$FILE"
-    sed -n '27p' "$FILE"
+    sed -i "26s/$1/$2/" "$FILE"
+    sed -i "26s/[0-9]\{1,2\}/$3/" "$FILE"
+    sed -n '26p' "$FILE"
 fi
