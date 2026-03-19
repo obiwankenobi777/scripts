@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+IMG=./img/freebsd.img
+
+qemu-system-x86_64 \
+  -m 2G \
+  -boot c \
+  -drive file="$IMG",format=qcow2
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+IMG=./img/freebsd.img
+ISO=$HOME/.virtual/iso/FreeBSD-15.0-RELEASE-amd64-disc1.iso
+
+qemu-system-x86_64 \
+  -m 2G \
+  -boot d \
+  -cdrom "$ISO" \
+  -drive file="$IMG",format=qcow2
+

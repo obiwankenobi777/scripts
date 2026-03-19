@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+qemu-img create -f qcow2 ./img/freebsd.img 20G

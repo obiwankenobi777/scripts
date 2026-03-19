@@ -23,7 +23,7 @@ choice() {
             echo "Show Me The Week(s)"
             (
                 cd "$pathDB" || exit 1
-                sqlite3 < show.sql
+                sqlite3 < week.sql
             )
             ;;
         i | insert)
