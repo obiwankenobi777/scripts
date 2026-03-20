@@ -17,14 +17,11 @@ export EDITOR=vim
 #ALIAS
 ##################################################################
 # brightnessctl
-alias jeff="cd $HOME/force/jeff/"
-alias asm="cd $HOME/force/asm/"
+alias gogo="cd $HOME/force/go/"
 alias extreme="cd $HOME/force/extreme/"
-alias beejs="cd $HOME/force/beejs/"
-alias lewis="cd $HOME/force/love/"
 alias guides="cd $HOME/.config/code/guides/"
-alias downloads="cd ~/downloads/"
 alias books="cd ~/books/"
+alias downloads="cd ~/downloads/"
 alias config="cd ~/.config/"
 alias scripts="cd ~/.config/scripts/"
 alias cls="clear"
@@ -72,3 +69,4 @@ venv() {
         source ../bin/activate
     fi
 }
+##################################################################
