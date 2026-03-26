@@ -12,12 +12,17 @@ PS1='\[\e[37m\]\w/ $\[\e[0m\] '
 # eval "$(luarocks path)"
 export PATH=/home/ian/.local/bin:$PATH
 export EDITOR=vim
+. "$HOME/.cargo/env"
 
 ##################################################################
 #ALIAS
 ##################################################################
 # brightnessctl
+alias rust="cd $HOME/force/rs/"
+alias beejs="cd $HOME/force/beejs/"
+alias unix="cd $HOME/force/unix/"
 alias gogo="cd $HOME/force/go/"
+alias lewis="cd $HOME/force/lewis/"
 alias extreme="cd $HOME/force/extreme/"
 alias guides="cd $HOME/.config/code/guides/"
 alias books="cd ~/books/"
@@ -69,4 +74,9 @@ venv() {
         source ../bin/activate
     fi
 }
+docgo() {
+    export PATH=$PATH:$HOME/.go/bin
+    godoc -http=:8080
+}
 ##################################################################
+
