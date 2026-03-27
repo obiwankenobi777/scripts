@@ -19,12 +19,7 @@ export EDITOR=vim
 ##################################################################
 # brightnessctl
 alias rust="cd $HOME/force/rs/"
-alias beejs="cd $HOME/force/beejs/"
-alias unix="cd $HOME/force/unix/"
 alias gogo="cd $HOME/force/go/"
-alias lewis="cd $HOME/force/lewis/"
-alias extreme="cd $HOME/force/extreme/"
-alias guides="cd $HOME/.config/code/guides/"
 alias books="cd ~/books/"
 alias downloads="cd ~/downloads/"
 alias config="cd ~/.config/"
